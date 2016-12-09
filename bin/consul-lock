@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+
+docker run -e CONSUL_ADDR=$CONSUL_ADDR \
+           -u $(id -u $USER)           \
+           -v $(pwd):/root             \
+           alaa/consul-lock:latest "$@"

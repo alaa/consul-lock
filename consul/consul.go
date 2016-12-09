@@ -48,7 +48,7 @@ func (c *Consul) createSession() (string, error) {
 	session := c.Client.Session()
 	sessionID, _, err := session.Create(&consulapi.SessionEntry{
 		Behavior: consulapi.SessionBehaviorDelete,
-		TTL:      "15s",
+		TTL:      "8h",
 	}, nil)
 	return sessionID, err
 }
